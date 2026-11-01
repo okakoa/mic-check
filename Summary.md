@@ -18,7 +18,7 @@ Last updated: **November 1, 2026**
 - **`public/styles.v1.css`:**
   - Mobile-first, framework-free CSS using the system font stack.
   - High-contrast light and dark themes (`prefers-color-scheme`), reduced-motion support (`prefers-reduced-motion`), 48px+ tap targets, no horizontal scrolling at 320px width, and reserved ad slot heights (150px+ below interactive controls) to prevent Cumulative Layout Shift (CLS).
-- **`public/app.v1.js`:**
+- **`public/app.v2.js`:**
   - Vanilla JavaScript microphone tester using `navigator.mediaDevices.getUserMedia`, Web Audio API `AnalyserNode` (5-second RMS measurement), `MediaRecorder` (4-second local playback clip), and `enumerateDevices()`.
   - Automatically releases all media tracks when the test completes so the browser's recording indicator turns off immediately.
   - Maps all `getUserMedia` outcomes and errors (`NotAllowedError`, `NotFoundError`, `NotReadableError`, `OverconstrainedError`, `SecurityError`, missing API) to five clear plain-language answers with browser-specific instructions.
@@ -53,3 +53,4 @@ Last updated: **November 1, 2026**
 2. **Phase 4 – Custom Domain (Optional):** Connect a custom domain in Firebase Console → Hosting and run `node scripts/set-site.mjs --url https://your-domain.com`.
 3. **Phase 5 – Search & Analytics:** Add your GA4 Measurement ID to `public/config.js`, register the `result` custom dimension in GA4, and submit `/sitemap.xml` in Google Search Console.
 4. **Phase 6 – Monetization:** Add Adsterra, AdSense, or Monetag credentials in `public/config.js` and `public/ads.txt` when ready.
+

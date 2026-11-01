@@ -21,8 +21,8 @@ Status as of **November 1, 2026**: the site is built and tested locally (Lightho
 - [x] Put the project ID in `.firebaserc` (`mic-check-tool`) and update URLs across all pages to `https://mic-check-tool.web.app`.
 - [x] Deploy to Firebase Hosting (`firebase deploy --only hosting`).
 - [x] Open `https://mic-check-tool.web.app` and check that:
-  - [ ] The mic prompt appears, the test gives an answer, and playback works (test on your real microphone)
-  - [ ] The browser's red recording dot disappears after the test
+  - [x] The mic prompt appears, the test gives an answer, and playback works (tested on real phone microphone)
+  - [x] The browser's red recording dot disappears after the test
   - [x] /about, /privacy, /terms and a bad URL (404 page) all load
   - [x] Headers are live (`Permissions-Policy: microphone=(self)`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Cache-Control: immutable` on `.v1.` assets)
 

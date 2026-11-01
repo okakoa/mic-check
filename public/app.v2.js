@@ -363,6 +363,25 @@
     }, RECORD_MS);
   }
 
+  // Format raw browser/OS microphone labels into friendly, unambiguous names.
+  // On desktop, strip the "Default - " / "Communications - " prefix on virtual aliases.
+  // On Android Chrome, where the OS hides the phone's brand/model and reports audio routing
+  // channels ("Default", "Speakerphone", "Communications", "Bluetooth headset", "Wired headset"),
+  // turn bare labels into clear descriptions.
+  function cleanMicLabel(raw, index, underlyingName) {
+    var s = (raw || "").replace(/^\s*(Default|Communications)\s*[-–:]\s*/i, "").trim();
+    if (!s || /^default$/i.test(s)) {
+      return underlyingName ? ("Built-in microphone (" + underlyingName + ")") : "Built-in / Default microphone";
+    }
+    if (/^communications$/i.test(s)) {
+      return "Phone-call microphone (Communications)";
+    }
+    if (/^speakerphone$/i.test(s)) {
+      return "Speakerphone microphone";
+    }
+    return s || ("Microphone " + (index + 1));
+  }
+
   function updateDevices(activeTrack) {
     if (!navigator.mediaDevices.enumerateDevices) return Promise.resolve();
     return navigator.mediaDevices.enumerateDevices().then(function (list) {
@@ -370,28 +389,63 @@
       var settings = activeTrack && activeTrack.getSettings ? activeTrack.getSettings() : {};
       var activeId = settings.deviceId || "";
       var active = inputs.filter(function (d) { return d.deviceId === activeId; })[0];
-      var label = (active && active.label) || (activeTrack && activeTrack.label) || "Default microphone";
-      deviceName.textContent = "Using: " + label;
+
+      // Physical (non-alias) devices reported by the browser.
+      var real = inputs.filter(function (d) {
+        return d.deviceId && d.deviceId !== "default" && d.deviceId !== "communications";
+      });
+
+      // Find the physical device that backs the "default" alias (only when it shares the same groupId).
+      var defEntry = inputs.filter(function (d) { return d.deviceId === "default"; })[0];
+      var backingDefault = defEntry && defEntry.groupId &&
+        real.filter(function (d) { return d.groupId === defEntry.groupId; })[0];
+      var backingName = backingDefault && backingDefault.label ? backingDefault.label.trim() : "";
+
+      // Build the selectable list:
+      // - On desktop (where "default" has the same groupId as a named physical mic), show each physical mic once.
+      // - On Android (where "Default" is the primary handset mic and "Speakerphone" is a separate routing channel
+      //   with its own groupId), include both in the list so the user can see and switch between them.
+      var choices = [];
+      var defaultSharesRealGroup = Boolean(backingDefault);
+      if (defEntry && !defaultSharesRealGroup) {
+        choices.push({
+          deviceId: defEntry.deviceId,
+          label: cleanMicLabel(defEntry.label, 0, "")
+        });
+      }
+      real.forEach(function (d, i) {
+        choices.push({
+          deviceId: d.deviceId,
+          label: cleanMicLabel(d.label, i, "")
+        });
+      });
+
+      // Resolve the active microphone's display name and matching dropdown value.
+      var rawActive = (active && active.label) || (activeTrack && activeTrack.label) || "";
+      var activeBacking = "";
+      if (active && (active.deviceId === "default" || /^default$/i.test(rawActive))) {
+        var sameGroup = active.groupId && real.filter(function (d) { return d.groupId === active.groupId; })[0];
+        activeBacking = (sameGroup && sameGroup.label) || backingName;
+      }
+      var displayLabel = cleanMicLabel(rawActive, 0, activeBacking);
+      deviceName.textContent = "Using: " + displayLabel;
       deviceName.hidden = false;
 
-      // Drop the "default"/"communications" aliases so each physical mic appears once.
-      var real = inputs.filter(function (d) { return d.deviceId && d.deviceId !== "default" && d.deviceId !== "communications"; });
-      if (real.length > 1) {
+      if (choices.length > 1) {
         var current = select.value || activeId;
         select.innerHTML = "";
-        real.forEach(function (d, i) {
+        choices.forEach(function (c) {
           var o = document.createElement("option");
-          o.value = d.deviceId;
-          o.textContent = d.label || ("Microphone " + (i + 1));
+          o.value = c.deviceId;
+          o.textContent = c.label;
           select.appendChild(o);
         });
-        var match = real.some(function (d) { return d.deviceId === current; });
+        var match = choices.some(function (c) { return c.deviceId === current; });
         if (!match && active) {
-          // "default" alias: select the physical device with the same group.
           var same = real.filter(function (d) { return d.groupId === active.groupId; })[0];
-          current = same ? same.deviceId : real[0].deviceId;
+          current = same ? same.deviceId : choices[0].deviceId;
         }
-        select.value = real.some(function (d) { return d.deviceId === current; }) ? current : real[0].deviceId;
+        select.value = choices.some(function (c) { return c.deviceId === current; }) ? current : choices[0].deviceId;
         picker.hidden = false;
       } else {
         picker.hidden = true;
