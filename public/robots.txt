@@ -23,5 +23,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://mic-check.web.app/sitemap.xml
+Sitemap: https://mic-check-tool.web.app/sitemap.xml
 

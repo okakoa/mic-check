@@ -15,21 +15,16 @@ Status as of **November 1, 2026**: the site is built and tested locally (Lightho
 - [x] In `public/ads.txt`, comment out (`#`) the AdSense placeholder line until you have a real publisher ID.
 - [x] Optional: commit the project to Git (`git init`, first commit) so you can undo changes.
 
-## Phase 2 – Deploy to Firebase Hosting
+## Phase 2 – Deploy to Firebase Hosting ✅ Completed
 
-- [ ] Create a Firebase project at console.firebase.google.com (note the project ID).
-- [ ] Put the project ID in `.firebaserc` (replace `mic-check`).
-- [ ] Deploy:
-  ```powershell
-  firebase login
-  firebase use --add
-  firebase deploy --only hosting
-  ```
-- [ ] Open `https://<project-id>.web.app` and check that:
-  - [ ] The mic prompt appears, the test gives an answer, and playback works
+- [x] Create a Firebase project (`mic-check-tool`).
+- [x] Put the project ID in `.firebaserc` (`mic-check-tool`) and update URLs across all pages to `https://mic-check-tool.web.app`.
+- [x] Deploy to Firebase Hosting (`firebase deploy --only hosting`).
+- [x] Open `https://mic-check-tool.web.app` and check that:
+  - [ ] The mic prompt appears, the test gives an answer, and playback works (test on your real microphone)
   - [ ] The browser's red recording dot disappears after the test
-  - [ ] /about, /privacy, /terms and a bad URL (404 page) all load
-  - [ ] Headers are live (DevTools → Network → document → `Permissions-Policy`, `Cache-Control`)
+  - [x] /about, /privacy, /terms and a bad URL (404 page) all load
+  - [x] Headers are live (`Permissions-Policy: microphone=(self)`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Cache-Control: immutable` on `.v1.` assets)
 
 ## Phase 3 – Real-device testing
 

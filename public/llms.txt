@@ -9,11 +9,11 @@
 
 ## Pages
 
-- [Microphone test](https://mic-check.web.app/): the tool, how it works, and troubleshooting by device (Windows, Mac, iPhone/iPad, Android, browser permission resets)
-- [FAQ](https://mic-check.web.app/#faq): short answers about testing a microphone, permissions, safety, and input level
-- [About](https://mic-check.web.app/about)
-- [Privacy policy](https://mic-check.web.app/privacy)
-- [Terms of use](https://mic-check.web.app/terms)
+- [Microphone test](https://mic-check-tool.web.app/): the tool, how it works, and troubleshooting by device (Windows, Mac, iPhone/iPad, Android, browser permission resets)
+- [FAQ](https://mic-check-tool.web.app/#faq): short answers about testing a microphone, permissions, safety, and input level
+- [About](https://mic-check-tool.web.app/about)
+- [Privacy policy](https://mic-check-tool.web.app/privacy)
+- [Terms of use](https://mic-check-tool.web.app/terms)
 
 ## Contact
 
