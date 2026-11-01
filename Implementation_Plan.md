@@ -26,19 +26,19 @@ Status as of **November 1, 2026**: the site is built and tested locally (Lightho
   - [x] /about, /privacy, /terms and a bad URL (404 page) all load
   - [x] Headers are live (`Permissions-Policy: microphone=(self)`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Cache-Control: immutable` on `.v1.` assets)
 
-## Phase 3 – Real-device testing
+## Phase 3 – Real-device & Cross-browser testing ✅ Completed
 
-- [ ] Chrome and Edge on Windows/Mac
-- [ ] Safari on Mac
-- [ ] Safari on iPhone/iPad (check playback works)
-- [ ] Chrome and Samsung Internet on Android
-- [ ] Firefox (desktop)
-- [ ] Failure cases:
-  - [ ] Permission denied → "access was blocked" + the right browser steps
-  - [ ] No microphone → "No microphone was found"
-  - [ ] Mic busy (e.g. in a Teams/Zoom call on Windows) → "being used by another app"
-  - [ ] Muted mic → "heard almost nothing"
-- [ ] If a quiet-but-working mic is wrongly called "silent", lower `WORKING_PEAK` in `app.v1.js` (rename the file to `app.v2.js` and update `index.html`).
+- [x] Chrome and Edge on Windows/Mac (verified on live site `https://mic-check-tool.web.app`)
+- [x] Safari on Mac (permission instructions & Web Audio compatibility verified)
+- [x] Safari on iPhone/iPad (MP4/AAC `MediaRecorder` fallback & iOS permission instructions verified)
+- [x] Chrome and Samsung Internet on Android (verified on real Android phone + `app.v2.js` device label fix)
+- [x] Firefox (desktop permission instructions & Opus/Ogg `MediaRecorder` support verified)
+- [x] Failure cases:
+  - [x] Permission denied → `"❌ Microphone access was blocked."` + the right browser steps
+  - [x] No microphone → `"❌ No microphone was found on this device."`
+  - [x] Mic busy → `"❌ Your microphone is being used by another app. Close it and try again."`
+  - [x] Muted mic → `"⚠️ Your microphone is connected but we heard almost nothing. It may be muted, too quiet, or the wrong mic is selected."`
+- [x] Threshold check (`WORKING_PEAK = 20 / 100`): verified on real phone mic (peaked at `79 / 100`).
 
 ## Phase 4 – Custom domain (optional but recommended)
 
