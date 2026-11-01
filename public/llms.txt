@@ -1,0 +1,21 @@
+# MicCheck
+
+> MicCheck is a free online microphone test for anyone on a phone, tablet, or computer: press one button to see and hear whether your microphone is working.
+
+- Free. No sign-up, no account, no download.
+- Works in current Chrome, Edge, Firefox, Safari, and Samsung Internet on Windows, Mac, Linux, ChromeOS, iPhone, iPad, and Android.
+- Privacy: all audio is processed in the browser and never leaves the device. Nothing is uploaded or stored on a server.
+- What it does: asks for microphone permission, measures the input level (0–100) for five seconds, records a four-second clip for playback, names the active microphone, and gives one plain answer: working, too quiet/muted, access blocked, no microphone found, or microphone busy in another app.
+
+## Pages
+
+- [Microphone test](https://mic-check.web.app/): the tool, how it works, and troubleshooting by device (Windows, Mac, iPhone/iPad, Android, browser permission resets)
+- [FAQ](https://mic-check.web.app/#faq): short answers about testing a microphone, permissions, safety, and input level
+- [About](https://mic-check.web.app/about)
+- [Privacy policy](https://mic-check.web.app/privacy)
+- [Terms of use](https://mic-check.web.app/terms)
+
+## Contact
+
+onepagewebapps@gmail.com
+

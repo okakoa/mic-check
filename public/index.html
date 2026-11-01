@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mic Test – Check if Your Microphone Is Working (Free, Online)</title>
+  <meta name="description" content="Free online mic test. Press one button to check if your microphone is working on any phone, tablet, or computer. Hear a playback. Audio stays on your device.">
+  <link rel="canonical" href="https://mic-check.web.app/">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MicCheck">
+  <meta property="og:title" content="Mic Test – Check if Your Microphone Is Working">
+  <meta property="og:description" content="Press one button to see and hear whether your microphone is working. Free, no sign-up, audio never leaves your device.">
+  <meta property="og:url" content="https://mic-check.web.app/">
+  <meta property="og:image" content="https://mic-check.web.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MicCheck microphone test">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mic Test – Check if Your Microphone Is Working">
+  <meta name="twitter:description" content="Press one button to see and hear whether your microphone is working. Free, no sign-up, audio never leaves your device.">
+  <meta name="twitter:image" content="https://mic-check.web.app/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.v1.css">
+
+  <!-- Site config (GA4 ID, ad provider, keys). Tiny and synchronous on purpose:
+       it sets data-ads on <html> before first paint so ad slots never shift the layout. -->
+  <script src="/config.js"></script>
+
+  <!-- ===== AdSense (uncomment after you are approved; also set ADS.provider = "adsense" in config.js) =====
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  ===== end AdSense ===== -->
+
+  <!-- ===== Google-certified CMP goes here =====
+       If you turn on AdSense "Privacy & messaging" (European regulations message), Google injects
+       its own consent message automatically once the AdSense script above is active.
+       When you do that, set CONSENT.banner = "none" in config.js to hide the built-in banner.
+       ===== end CMP ===== -->
+
+  <!-- TODO (security): add a Content-Security-Policy once the ad network is final.
+       A strict CSP now would block ad/analytics scripts loaded from many domains. -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://mic-check.web.app/#app",
+        "name": "MicCheck – Online Microphone Test",
+        "url": "https://mic-check.web.app/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires a modern browser with microphone access (getUserMedia) and the Web Audio API, such as current Chrome, Edge, Firefox, or Safari.",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "MicCheck is a free online microphone test for anyone on a phone, tablet, or computer: press one button to see and hear whether your microphone is working.",
+        "publisher": { "@id": "https://mic-check.web.app/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://mic-check.web.app/#org",
+        "name": "MicCheck",
+        "url": "https://mic-check.web.app/",
+        "email": "onepagewebapps@gmail.com",
+        "logo": "https://mic-check.web.app/icon-512.png"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mic-check.web.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I test my microphone online?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Press \"Test my microphone\" at the top of this page and allow microphone access when your browser asks. Speak or clap for five seconds and the page tells you whether your microphone is working. You can then play back a short recording to hear yourself." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is my microphone not working?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The most common causes are a blocked browser permission, a microphone that is muted or disabled in system settings, the wrong input device being selected, or another app already using the microphone. A loose cable or a Bluetooth headset that is not connected can also be the cause." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I allow microphone access in Chrome, Safari, or Firefox?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In Chrome and Edge, click the icon to the left of the web address, set Microphone to Allow, and reload the page. In Safari on a Mac, open Safari > Settings > Websites > Microphone and choose Allow for this site; on iPhone and iPad, tap the page menu in the address bar, then Website Settings > Microphone > Allow. In Firefox, click the permissions icon to the left of the web address, clear the blocked microphone permission, and reload." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this microphone test safe? Is my audio recorded or uploaded?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, it is safe. All audio is processed inside your browser and never leaves your device. The short playback clip is kept only in your browser's memory and is discarded when you reload or leave the page." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on iPhone and Android?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. It works in Safari on iPhone and iPad and in Chrome, Edge, Firefox, and Samsung Internet on Android. On very old versions of iOS the level test works, but the playback feature may not be available." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does my mic work in other apps but not in the browser?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The browser needs its own permission to use the microphone. On Windows and Mac, the browser app must be allowed in the system privacy settings, and this website must be allowed inside the browser. If another app is holding the microphone, close it and test again." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does \"input level\" mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Input level is how loud the sound reaching your microphone is, on a scale from 0 to 100. A quiet room usually reads below 10, normal speech close to the microphone reads roughly 40 to 70, and a clap can go higher. If the level stays near 0 while you speak, the microphone is muted, too quiet, or the wrong one is selected." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I choose a different microphone?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your device has more than one microphone, a menu appears after the first test so you can pick another one and test again." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#tool">Skip to the microphone test</a>
+
+  <header class="site-header">
+    <p class="brand"><a href="/">MicCheck</a></p>
+  </header>
+
+  <main id="main">
+    <div class="intro">
+      <h1>Microphone Test: Check if Your Mic Is Working</h1>
+      <p class="lede">MicCheck is a free online microphone test for anyone on a phone, tablet, or computer: press one button to see and hear whether your microphone is working.</p>
+    </div>
+
+    <!-- THE BOX -->
+    <section id="tool" class="card" aria-labelledby="tool-title">
+      <h2 id="tool-title" class="visually-hidden">Microphone test</h2>
+
+      <button id="test-btn" class="btn btn-primary" type="button">Test my microphone</button>
+
+      <div id="result" class="result" role="status" aria-live="polite" aria-atomic="true">
+        <p id="answer" class="answer">Press the button. Your browser will ask for microphone permission.</p>
+        <p id="detail" class="detail"></p>
+      </div>
+
+      <div id="meter-wrap" class="meter-wrap" hidden>
+        <div class="meter" aria-hidden="true"><div id="meter-bar" class="meter-bar"></div></div>
+        <p id="level-text" class="level-text">Input level: 0 / 100</p>
+      </div>
+
+      <p id="device-name" class="device-name" hidden></p>
+
+      <div id="device-picker" class="device-picker" hidden>
+        <label for="device-select">Microphone (pick one, then test again)</label>
+        <select id="device-select"></select>
+      </div>
+
+      <div id="playback" class="playback" hidden>
+        <button id="play-btn" class="btn btn-secondary" type="button">Play it back</button>
+      </div>
+      <p id="playback-note" class="playback-note" hidden></p>
+
+      <p class="privacy-note">Your audio never leaves your device.</p>
+    </section>
+
+    <!-- Ad slot A: kept well away (150px+) from the test button, result, and playback button. -->
+    <div class="ad-slot ad-slot-a" data-slot="A">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-fill"></div>
+    </div>
+
+    <section class="content" aria-labelledby="how">
+      <h2 id="how">How it works</h2>
+      <ol>
+        <li>Press "Test my microphone" and allow microphone access when your browser asks.</li>
+        <li>Speak or clap for five seconds while the page measures the input level from your microphone.</li>
+        <li>The page tells you in plain words whether your microphone is working, and you can play back a four-second recording to hear yourself.</li>
+      </ol>
+      <p>Everything happens inside your browser. No audio is uploaded, stored on a server, or sent anywhere. When the test ends, the page releases the microphone and your browser's recording indicator turns off.</p>
+    </section>
+
+    <section class="content" aria-labelledby="fix">
+      <h2 id="fix">Microphone not working?</h2>
+      <p>Start with the basics: make sure the microphone is plugged in or connected, is not muted by a hardware switch or headset button, and is not being used by a video-call app. Then follow the steps for your device.</p>
+
+      <h3>Windows 10 and 11</h3>
+      <ul>
+        <li>Open Settings &gt; Privacy &amp; security &gt; Microphone and turn on "Microphone access" and "Let desktop apps access your microphone".</li>
+        <li>Open Settings &gt; System &gt; Sound, choose the correct microphone under Input, and check that its volume is not at 0.</li>
+        <li>If the microphone is listed as disabled, open Sound settings &gt; More sound settings &gt; Recording, right-click it, and choose Enable.</li>
+      </ul>
+
+      <h3>Mac</h3>
+      <ul>
+        <li>Open System Settings &gt; Privacy &amp; Security &gt; Microphone and turn on your browser (Chrome, Edge, Firefox, or Safari). Restart the browser afterwards.</li>
+        <li>Open System Settings &gt; Sound &gt; Input, select the right microphone, and raise the input volume.</li>
+      </ul>
+
+      <h3>iPhone and iPad</h3>
+      <ul>
+        <li>In Safari, tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow, and reload the page.</li>
+        <li>For Chrome or another browser, open Settings, scroll to the browser app, and turn on Microphone.</li>
+        <li>Check that no other app, call, or screen recording is using the microphone, and remove any case that covers the microphone holes.</li>
+      </ul>
+
+      <h3>Android</h3>
+      <ul>
+        <li>Open Settings &gt; Apps &gt; your browser &gt; Permissions &gt; Microphone and choose "Allow only while using the app" or "Ask every time".</li>
+        <li>On Android 12 and newer, open quick settings and make sure the microphone access toggle is on.</li>
+        <li>In Chrome, tap the icon to the left of the web address, open Permissions, and allow Microphone.</li>
+      </ul>
+
+      <h3>Reset the permission in your browser</h3>
+      <ul>
+        <li><strong>Chrome and Edge:</strong> click the icon to the left of the web address, set Microphone to Allow, then reload. You can also check chrome://settings/content/microphone or edge://settings/content/microphone.</li>
+        <li><strong>Firefox:</strong> click the permissions icon to the left of the web address, clear the blocked microphone permission, then reload and choose Allow.</li>
+        <li><strong>Safari on Mac:</strong> open Safari &gt; Settings &gt; Websites &gt; Microphone and set this website to Allow.</li>
+        <li><strong>Safari on iPhone and iPad:</strong> tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow.</li>
+      </ul>
+    </section>
+
+    <section class="content faq" aria-labelledby="faq">
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <h3>How do I test my microphone online?</h3>
+      <p>Press "Test my microphone" at the top of this page and allow microphone access when your browser asks. Speak or clap for five seconds and the page tells you whether your microphone is working. You can then play back a short recording to hear yourself.</p>
+
+      <h3>Why is my microphone not working?</h3>
+      <p>The most common causes are a blocked browser permission, a microphone that is muted or disabled in system settings, the wrong input device being selected, or another app already using the microphone. A loose cable or a Bluetooth headset that is not connected can also be the cause.</p>
+
+      <h3>How do I allow microphone access in Chrome, Safari, or Firefox?</h3>
+      <p>In Chrome and Edge, click the icon to the left of the web address, set Microphone to Allow, and reload the page. In Safari on a Mac, open Safari &gt; Settings &gt; Websites &gt; Microphone and choose Allow for this site; on iPhone and iPad, tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow. In Firefox, click the permissions icon to the left of the web address, clear the blocked microphone permission, and reload.</p>
+
+      <h3>Is this microphone test safe? Is my audio recorded or uploaded?</h3>
+      <p>Yes, it is safe. All audio is processed inside your browser and never leaves your device. The short playback clip is kept only in your browser's memory and is discarded when you reload or leave the page.</p>
+
+      <h3>Does it work on iPhone and Android?</h3>
+      <p>Yes. It works in Safari on iPhone and iPad and in Chrome, Edge, Firefox, and Samsung Internet on Android. On very old versions of iOS the level test works, but the playback feature may not be available.</p>
+
+      <h3>Why does my mic work in other apps but not in the browser?</h3>
+      <p>The browser needs its own permission to use the microphone. On Windows and Mac, the browser app must be allowed in the system privacy settings, and this website must be allowed inside the browser. If another app is holding the microphone, close it and test again.</p>
+
+      <h3>What does "input level" mean?</h3>
+      <p>Input level is how loud the sound reaching your microphone is, on a scale from 0 to 100. A quiet room usually reads below 10, normal speech close to the microphone reads roughly 40 to 70, and a clap can go higher. If the level stays near 0 while you speak, the microphone is muted, too quiet, or the wrong one is selected.</p>
+
+      <h3>Can I choose a different microphone?</h3>
+      <p>Yes. If your device has more than one microphone, a menu appears after the first test so you can pick another one and test again.</p>
+
+      <p class="updated">Last updated: <time datetime="2026-11-01">November 1, 2026</time></p>
+    </section>
+
+    <!-- Ad slot B (optional) -->
+    <div class="ad-slot ad-slot-b" data-slot="B">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-fill"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Your audio never leaves your device.</strong></p>
+    <nav aria-label="Site information">
+      <a href="/about">About</a> ·
+      <a href="/privacy">Privacy</a> ·
+      <a href="/terms">Terms</a> ·
+      <a href="mailto:onepagewebapps@gmail.com">onepagewebapps@gmail.com</a>
+    </nav>
+    <p>© <span class="year">2026</span> MicCheck</p>
+  </footer>
+
+  <!-- Built-in consent banner (hidden until needed; non-blocking) -->
+  <div id="consent" class="consent" role="region" aria-label="Cookie consent" hidden>
+    <p>We use cookies for analytics and ads. You can accept or reject them. <a href="/privacy">Privacy policy</a></p>
+    <div class="consent-actions">
+      <button id="consent-reject" class="btn btn-secondary btn-small" type="button">Reject</button>
+      <button id="consent-accept" class="btn btn-primary btn-small" type="button">Accept</button>
+    </div>
+  </div>
+
+  <script src="/app.v1.js" defer></script>
+</body>
+</html>
+

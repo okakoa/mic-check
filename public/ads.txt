@@ -1,0 +1,13 @@
+# ads.txt – authorized digital sellers for this site.
+# Paste the EXACT lines your ad network's dashboard gives you, then remove the "#"
+# from the lines that apply. Lines starting with "#" are comments and are ignored.
+
+# --- Google AdSense (replace XXXXXXXXXXXXXXXX with your publisher ID) ---
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# --- Adsterra (copy the line(s) from Adsterra > Websites > ads.txt) ---
+# PASTE-ADSTERRA-ADS-TXT-LINE-HERE
+
+# --- Monetag (copy the line(s) from the Monetag dashboard) ---
+# PASTE-MONETAG-ADS-TXT-LINE-HERE
+
