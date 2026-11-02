@@ -20,6 +20,7 @@ This document records all live accounts, URLs, identifiers, configuration settin
 | **GitHub Repository** | https://github.com/okakoa/mic-check |
 | **Google Analytics 4 ID** | `G-JXDQL7L7HZ` (Account: `One Page Web Apps`) |
 | **Search Console Meta Tag** | `y09TT-Vs7v_0wu4aY_IGKY6kACAYdtzjUkI8gs8K8eQ` |
+| **Bing Webmaster Meta Tag** | `D5AB82A54FB28CFD907F3802E26B83C6` |
 | **Git Default Branch** | `main` |
 | **Local Git Author** | `One Page Web Apps <onepagewebapps@gmail.com>` |
 
