@@ -17,7 +17,7 @@ var CONSENT = { banner: "builtin", showTo: "eea" };
 
 /* Ads. Pick ONE provider: "none" | "adsense" | "adsterra" | "monetag". */
 var ADS = {
-  provider: "none",
+  provider: "adsterra",
 
   adsense: {
     client: "ca-pub-XXXXXXXXXXXXXXXX", // your publisher ID
@@ -26,12 +26,14 @@ var ADS = {
   },
 
   adsterra: {
-    bannerKey: "",        // Banner 728x90 key (desktop, slot A)
-    bannerKeyMobile: "",  // Banner 300x250 or 320x50 key (mobile, slot A). Falls back to bannerKey.
+    bannerKey: "41babd7863c94b1ed41ce8a9853d5cbb",        // Banner 728x90 key (desktop, slot A)
+    bannerSrc: "https://bauval.org/22/41babd7863c94b1ed41ce8a9853d5cbb",
+    bannerKeyMobile: "240391e5747da4f99cef9682761d42a3",  // Banner 300x250 key (mobile, slot A)
+    bannerSrcMobile: "https://bauval.org/22/240391e5747da4f99cef9682761d42a3",
     mobileSize: "300x250",// "300x250" or "320x50" – must match the mobile unit you created
-    bannerHost: "//www.highperformanceformat.com", // host from your banner code (…/KEY/invoke.js)
-    nativeKey: "",        // Native Banner key (slot B)
-    nativeSrc: "",        // full invoke.js URL from your Native Banner code, e.g. "//pl123.example.com/KEY/invoke.js"
+    bannerHost: "https://bauval.org/22", // host/path prefix from your banner code
+    nativeKey: "230eba95f0712e7ae4ebdf2f75645782",        // Native Banner key (slot B)
+    nativeSrc: "https://bauval.org/21/230eba95f0712e7ae4ebdf2f75645782",
     socialBar: false,     // Social Bar is OFF by default
     socialBarSrc: ""      // full script URL from your Social Bar code
   },

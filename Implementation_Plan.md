@@ -56,14 +56,14 @@ Status as of **November 1, 2026**: the site is built and tested locally (Lightho
 - [x] Rich Results / JSON-LD check: verified `WebApplication`, `Organization`, and `FAQPage` schemas on live page.
 - [x] Run Lighthouse (mobile) on the live URL and confirm 95+ in every category (**Performance: 99, Accessibility: 100, Best Practices: 100, SEO: 100**).
 
-## Phase 6 – Monetization (pick ONE path)
+## Phase 6 – Monetization (pick ONE path) ✅ Completed (Adsterra Active)
 
 Recommended order: start with Adsterra banners → build traffic → apply to AdSense with ads off → switch if approved.
 
-**Adsterra (fastest start)**
-- [ ] Sign up as a Publisher, add the site, create a Banner unit (728x90 + 300x250 or 320x50) and a Native Banner.
-- [ ] Paste the keys/URLs into `ADS.adsterra` in `config.js`, set `provider: "adsterra"`.
-- [ ] Add Adsterra's line to `ads.txt`, then deploy.
+**Adsterra (active)**
+- [x] Sign up as a Publisher, add the site, create a Banner unit (`728x90` + `300x250`) and a Native Banner.
+- [x] Paste the keys/URLs into `ADS.adsterra` in `config.js`, set `provider: "adsterra"`, and deploy (`app.v3.js`, `styles.v2.css`).
+- [ ] Optional: if Adsterra provides `ads.txt` lines under Websites → `ads.txt`, paste them into `public/ads.txt` and deploy.
 
 **AdSense (when you have some traffic)**
 - [ ] Set `provider: "none"` while under review.

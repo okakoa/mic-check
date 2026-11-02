@@ -127,7 +127,8 @@
 
   // Adsterra banners use document.write, so each banner runs inside its own iframe.
   // The iframe is denied microphone/camera access.
-  function adsterraBanner(target, key, w, h, host) {
+  function adsterraBanner(target, key, w, h, host, explicitSrc) {
+    var scriptSrc = explicitSrc || (host + "/" + key);
     var f = document.createElement("iframe");
     f.title = "Advertisement";
     f.width = w; f.height = h;
@@ -137,7 +138,7 @@
     f.style.maxWidth = "100%";
     f.srcdoc = "<!doctype html><html><head><style>html,body{margin:0;padding:0;overflow:hidden}</style></head><body>" +
       "<script>atOptions={'key':'" + key + "','format':'iframe','height':" + h + ",'width':" + w + ",'params':{}};<\/script>" +
-      "<script src=\"" + host + "/" + key + "/invoke.js\"><\/script></body></html>";
+      "<script src=\"" + scriptSrc + "\"><\/script></body></html>";
     target.appendChild(f);
   }
 
@@ -167,14 +168,16 @@
 
   function loadAdsterra() {
     var a = cfg.ads.adsterra || {};
-    var host = a.bannerHost || "//www.highperformanceformat.com";
+    var host = a.bannerHost || "https://bauval.org/22";
     var t = fill("A");
     var wide = t && t.clientWidth >= 728;
     if (t && wide && a.bannerKey) {
-      adsterraBanner(t, a.bannerKey, 728, 90, host);
+      adsterraBanner(t, a.bannerKey, 728, 90, host, a.bannerSrc);
     } else if (t && (a.bannerKeyMobile || a.bannerKey)) {
       var small = a.mobileSize === "320x50";
-      adsterraBanner(t, a.bannerKeyMobile || a.bannerKey, small ? 320 : 300, small ? 50 : 250, host);
+      var mKey = a.bannerKeyMobile || a.bannerKey;
+      var mSrc = a.bannerSrcMobile || (a.bannerKeyMobile ? "" : a.bannerSrc);
+      adsterraBanner(t, mKey, small ? 320 : 300, small ? 50 : 250, host, mSrc);
     } else hideSlot("A");
 
     var b = fill("B");

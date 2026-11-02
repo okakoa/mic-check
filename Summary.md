@@ -15,10 +15,10 @@ Last updated: **November 1, 2026**
   - Centered tool card (`#tool`) with one primary button (*"Test my microphone"*), `aria-live="polite"` result box, decorative level meter paired with live selectable text (`Input level: X / 100`), active microphone display (`Using: …`), multi-mic `<select>` switcher, and in-memory 4-second audio playback (*"Play it back"*).
   - Comprehensive plain-text sections below the fold for crawlers, AI assistants, and AdSense reviewers: **How it works**, **Microphone not working?** (troubleshooting for Windows 10/11, Mac, iPhone/iPad, Android, and browser permission resets), and **Frequently asked questions** (8 Q&As).
   - Full SEO & GEO metadata: `<title>`, `<meta name="description">`, canonical URL, Open Graph & Twitter Card tags, and JSON-LD structured data (`WebApplication`, `Organization`, and `FAQPage` matching the visible FAQ word for word).
-- **`public/styles.v1.css`:**
+- **`public/styles.v2.css`:**
   - Mobile-first, framework-free CSS using the system font stack.
   - High-contrast light and dark themes (`prefers-color-scheme`), reduced-motion support (`prefers-reduced-motion`), 48px+ tap targets, no horizontal scrolling at 320px width, and reserved ad slot heights (150px+ below interactive controls) to prevent Cumulative Layout Shift (CLS).
-- **`public/app.v2.js`:**
+- **`public/app.v3.js`:**
   - Vanilla JavaScript microphone tester using `navigator.mediaDevices.getUserMedia`, Web Audio API `AnalyserNode` (5-second RMS measurement), `MediaRecorder` (4-second local playback clip), and `enumerateDevices()`.
   - Automatically releases all media tracks when the test completes so the browser's recording indicator turns off immediately.
   - Maps all `getUserMedia` outcomes and errors (`NotAllowedError`, `NotFoundError`, `NotReadableError`, `OverconstrainedError`, `SecurityError`, missing API) to five clear plain-language answers with browser-specific instructions.
@@ -49,8 +49,8 @@ Last updated: **November 1, 2026**
 ---
 
 ## 3. Next Steps (See [`Implementation_Plan.md`](Implementation_Plan.md))
-- **Completed:** Phases 1 (Personalization), 2 (Firebase Hosting Deployment), 3 (Real-Device & Cross-Browser Testing), and 5 (GA4 `G-JXDQL7L7HZ` & Google Search Console Verification + Sitemap Submission).
+- **Completed:** Phases 1 (Personalization), 2 (Firebase Hosting Deployment), 3 (Real-Device & Cross-Browser Testing), 5 (GA4 `G-JXDQL7L7HZ`, Google Search Console & Bing Webmaster Tools Verification + Sitemap Submission), and 6 (Adsterra Monetization Live: `728x90` desktop banner, `300x250` mobile banner, and Native Banner).
 - **Optional Future Steps:**
   1. **Phase 4 – Custom Domain (Optional):** Connect a custom domain in Firebase Console → Hosting and run `node scripts/set-site.mjs --url https://your-domain.com`.
-  2. **Phase 6 – Monetization:** Add Adsterra, AdSense, or Monetag credentials in `public/config.js` and `public/ads.txt` when ready.
+  2. **Phase 7 – Ongoing Maintenance:** Monitor GA4, Search Console, and Adsterra performance.
 

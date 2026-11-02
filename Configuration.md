@@ -37,7 +37,7 @@ This document records all live accounts, URLs, identifiers, configuration settin
 | `GA4_ID` | `"G-JXDQL7L7HZ"` | Live Google Analytics 4 Measurement ID for `mic-check-tool.web.app`. |
 | `CONSENT.banner` | `"builtin"` | Shows the built-in lightweight Accept / Reject banner. Change to `"none"` if switching to Google's certified AdSense CMP. |
 | `CONSENT.showTo` | `"eea"` | Shows the banner to visitors in EEA/UK/CH time zones (Consent Mode v2 defaults to `"denied"` in EEA/UK/CH). Change to `"all"` to show globally. |
-| `ADS.provider` | `"none"` | Active ad network: `"none"` \| `"adsense"` \| `"adsterra"` \| `"monetag"`. Keep as `"none"` while applying for AdSense. |
+| `ADS.provider` | `"adsterra"` | Active ad network: `"none"` \| `"adsense"` \| `"adsterra"` \| `"monetag"`. |
 
 ### Ad Provider Configuration Keys (`ADS` object in `public/config.js`)
 
@@ -45,19 +45,22 @@ This document records all live accounts, URLs, identifiers, configuration settin
   - `client`: `"ca-pub-XXXXXXXXXXXXXXXX"` (also uncomment `<head>` tags in `public/index.html` and line in `public/ads.txt`)
   - `slotA`: `""` (ad unit ID for Slot A, below the tool card)
   - `slotB`: `""` (ad unit ID for Slot B, above the footer)
-- **Adsterra (`ADS.adsterra`):**
-  - `bannerKey`: `""` (728×90 desktop banner key for Slot A)
-  - `bannerKeyMobile`: `""` (300×250 or 320×50 mobile banner key for Slot A)
-  - `mobileSize`: `"300x250"` (`"300x250"` or `"320x50"`)
-  - `bannerHost`: `"//www.highperformanceformat.com"`
-  - `nativeKey`: `""` and `nativeSrc`: `""` (Native Banner for Slot B)
+- **Adsterra (`ADS.adsterra`) — LIVE:**
+  - `bannerKey`: `"41babd7863c94b1ed41ce8a9853d5cbb"` (728×90 desktop banner key for Slot A)
+  - `bannerSrc`: `"https://bauval.org/22/41babd7863c94b1ed41ce8a9853d5cbb"`
+  - `bannerKeyMobile`: `"240391e5747da4f99cef9682761d42a3"` (300×250 mobile banner key for Slot A)
+  - `bannerSrcMobile`: `"https://bauval.org/22/240391e5747da4f99cef9682761d42a3"`
+  - `mobileSize`: `"300x250"`
+  - `bannerHost`: `"https://bauval.org/22"`
+  - `nativeKey`: `"230eba95f0712e7ae4ebdf2f75645782"` (Native Banner for Slot B)
+  - `nativeSrc`: `"https://bauval.org/21/230eba95f0712e7ae4ebdf2f75645782"`
   - `socialBar`: `false` and `socialBarSrc`: `""` (disabled by default)
 - **Monetag (`ADS.monetag`):**
   - `zoneTag`: `""` (paste the `<script>…</script>` snippet for an In-Page Push or banner zone)
 
 ---
 
-## 3. Tool Audio Parameters (`public/app.v2.js`)
+## 3. Tool Audio Parameters (`public/app.v3.js`)
 
 | Constant | Value | Description |
 |---|---|---|
@@ -84,7 +87,7 @@ This document records all live accounts, URLs, identifiers, configuration settin
 - **Cache-Control policy:**
   - HTML pages (`/`, `/about`, `/privacy`, `/terms`, `/404.html`): `no-cache`
   - Runtime config & service worker (`/config.js`, `/sw.js`): `no-cache`
-  - Versioned CSS & JS (`/styles.v1.css`, `/app.v2.js`): `public, max-age=31536000, immutable`
+  - Versioned CSS & JS (`/styles.v2.css`, `/app.v3.js`): `public, max-age=31536000, immutable`
   - Icons & images (`*.png`, `*.svg`): `public, max-age=31536000, immutable`
   - Metadata files (`*.txt`, `*.xml`, `*.webmanifest`): `public, max-age=3600`
 
