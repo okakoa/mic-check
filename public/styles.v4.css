@@ -247,7 +247,7 @@ html:not([data-ads="none"]) .ad-slot {
 }
 .ad-label { margin: 0 0 0.25rem; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .ad-fill { display: flex; justify-content: center; align-items: center; }
-html:not([data-ads="none"]) .ad-slot-a { margin-top: 5rem; min-height: 274px; }
+html:not([data-ads="none"]) .ad-slot-a { margin-top: 2.5rem; min-height: 274px; }
 html:not([data-ads="none"]) .ad-slot-b { min-height: 300px; }
 @media (min-width: 760px) {
   html:not([data-ads="none"]) .ad-slot-a { min-height: 114px; }
