@@ -16,8 +16,9 @@ Last updated: **November 1, 2026**
   - Centered tool card (`#tool`) with one primary button (*"Test my microphone"*), `aria-live="polite"` result box, decorative level meter paired with live selectable text (`Input level: X / 100`), active microphone display (`Using: …`), multi-mic `<select>` switcher, and in-memory 4-second audio playback (*"Play it back"*).
   - Comprehensive plain-text sections below the fold for crawlers, AI assistants, and AdSense reviewers: **How it works**, **Microphone not working?** (troubleshooting for Windows 10/11, Mac, iPhone/iPad, Android, and browser permission resets), and **Frequently asked questions** (8 Q&As).
   - Full SEO & GEO metadata: `<title>`, `<meta name="description">`, canonical URL, Open Graph & Twitter Card tags, and JSON-LD structured data (`WebApplication`, `Organization`, and `FAQPage` matching the visible FAQ word for word).
-- **`public/styles.v4.css`:**
+- **`public/styles.v5.css`:**
   - Mobile-first, framework-free CSS using the system font stack.
+  - Modern futuristic tech header block with glowing cyber gradient accent, glassmorphic dark theme backdrop, pulsing on-device status badge, and favicon logo integration.
   - High-contrast light and dark themes (`prefers-color-scheme`), reduced-motion support (`prefers-reduced-motion`), 48px+ tap targets, no horizontal scrolling at 320px width, and reserved ad slot heights (150px+ below interactive controls) to prevent Cumulative Layout Shift (CLS).
 - **`public/app.v4.js`:**
   - Vanilla JavaScript microphone tester using `navigator.mediaDevices.getUserMedia`, Web Audio API `AnalyserNode` (5-second RMS measurement), `MediaRecorder` (4-second local playback clip), and `enumerateDevices()`.
