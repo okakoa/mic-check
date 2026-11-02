@@ -87,7 +87,7 @@ This document records all live accounts, URLs, identifiers, configuration settin
 - **Cache-Control policy:**
   - HTML pages (`/`, `/about`, `/privacy`, `/terms`, `/404.html`): `no-cache`
   - Runtime config & service worker (`/config.js`, `/sw.js`): `no-cache`
-  - Versioned CSS & JS (`/styles.v6.css`, `/app.v4.js`): `public, max-age=31536000, immutable`
+  - Versioned CSS & JS (`/styles.v7.css`, `/app.v4.js`): `public, max-age=31536000, immutable`
   - Icons & images (`*.png`, `*.svg`): `public, max-age=31536000, immutable`
   - Metadata files (`*.txt`, `*.xml`, `*.webmanifest`): `public, max-age=3600`
 
