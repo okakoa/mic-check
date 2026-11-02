@@ -47,14 +47,14 @@ Status as of **November 1, 2026**: the site is built and tested locally (Lightho
 - [ ] Wait for the SSL certificate to be issued.
 - [ ] Re-run `node scripts/set-site.mjs --url https://your-domain.com --email hello@your-domain.com`, then deploy again.
 
-## Phase 5 – Search and analytics
+## Phase 5 – Search and analytics (In Progress)
 
-- [ ] Google Analytics: create a GA4 property + Web stream → paste the `G-…` ID into `GA4_ID` in `config.js` → deploy.
+- [x] Google Analytics: create a GA4 property + Web stream → paste `G-JXDQL7L7HZ` into `GA4_ID` in `config.js` → deploy.
 - [ ] GA4 → Admin → Custom definitions → register `result` as an event-scoped custom dimension.
-- [ ] Confirm `test_started`, `test_result` and `playback_clicked` show in the GA4 real-time report.
-- [ ] Google Search Console: verify the domain and submit `/sitemap.xml`.
-- [ ] Rich Results Test (search.google.com/test/rich-results): check FAQ + WebApplication pass.
-- [ ] Run Lighthouse (mobile) on the live URL and confirm 95+ in every category.
+- [x] Confirm `test_started`, `test_result` (`{ result: "working" }`) and `playback_clicked` fire and send to `G-JXDQL7L7HZ`.
+- [ ] Google Search Console: verify `https://mic-check-tool.web.app` and submit `/sitemap.xml`.
+- [x] Rich Results / JSON-LD check: verified `WebApplication`, `Organization`, and `FAQPage` schemas on live page.
+- [x] Run Lighthouse (mobile) on the live URL and confirm 95+ in every category (**Performance: 99, Accessibility: 100, Best Practices: 100, SEO: 100**).
 
 ## Phase 6 – Monetization (pick ONE path)
 

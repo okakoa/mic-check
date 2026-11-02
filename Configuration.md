@@ -31,7 +31,7 @@ This document records all live accounts, URLs, identifiers, configuration settin
 
 | Setting | Current Value | Purpose |
 |---|---|---|
-| `GA4_ID` | `"G-XXXXXXXXXX"` | Disabled placeholder until replaced with a real GA4 Measurement ID (`G-…`). |
+| `GA4_ID` | `"G-JXDQL7L7HZ"` | Live Google Analytics 4 Measurement ID for `mic-check-tool.web.app`. |
 | `CONSENT.banner` | `"builtin"` | Shows the built-in lightweight Accept / Reject banner. Change to `"none"` if switching to Google's certified AdSense CMP. |
 | `CONSENT.showTo` | `"eea"` | Shows the banner to visitors in EEA/UK/CH time zones (Consent Mode v2 defaults to `"denied"` in EEA/UK/CH). Change to `"all"` to show globally. |
 | `ADS.provider` | `"none"` | Active ad network: `"none"` \| `"adsense"` \| `"adsterra"` \| `"monetag"`. Keep as `"none"` while applying for AdSense. |

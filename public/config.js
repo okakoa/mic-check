@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* Google Analytics 4 Measurement ID. Leave as "G-XXXXXXXXXX" to disable GA. */
-var GA4_ID = "G-XXXXXXXXXX";
+var GA4_ID = "G-JXDQL7L7HZ";
 
 /* Consent banner.
    banner: "builtin" = show the small Accept/Reject banner.
