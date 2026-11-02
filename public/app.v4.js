@@ -554,6 +554,20 @@
     btn.textContent = "Test this microphone";
   });
 
+  // Collapsible Hero Description (⌄ toggle)
+  var introToggle = $("intro-toggle"), introDesc = $("intro-desc");
+  if (introToggle && introDesc) {
+    introToggle.addEventListener("click", function () {
+      var expanded = introToggle.getAttribute("aria-expanded") === "true";
+      var next = !expanded;
+      introToggle.setAttribute("aria-expanded", String(next));
+      var label = next ? "Hide description" : "Show description";
+      introToggle.setAttribute("aria-label", label);
+      introToggle.setAttribute("title", label);
+      introDesc.classList.toggle("is-collapsed", !next);
+    });
+  }
+
   // Always release the mic if the user leaves mid-test.
   window.addEventListener("pagehide", releaseMic);
 })();

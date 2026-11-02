@@ -93,15 +93,68 @@ a:hover { text-decoration-thickness: 2px; }
 .brand a { color: var(--text); text-decoration: none; display: inline-block; padding: 0.5rem 0; }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1.2;
-  margin: 0.5rem 0 0.75rem;
+  margin: 0;
   letter-spacing: -0.01em;
 }
 h2 { font-size: 1.375rem; line-height: 1.3; margin: 0 0 0.75rem; }
 h3 { font-size: 1.0625rem; line-height: 1.35; margin: 1.5rem 0 0.4rem; }
 
-.lede { margin: 0 0 1.5rem; color: var(--muted); font-size: 1.0625rem; }
+.intro { margin: 0.25rem 0 1rem; }
+.intro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.intro-toggle {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.35rem;
+  line-height: 1;
+  touch-action: manipulation;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.intro-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.intro-toggle .chevron {
+  display: inline-block;
+  transform: translateY(-3px);
+  transition: transform 200ms ease;
+}
+.intro-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg) translateY(-3px);
+}
+
+.lede {
+  margin: 0.65rem 0 0.25rem;
+  color: var(--muted);
+  font-size: 1.0625rem;
+  max-height: 12rem;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 220ms ease, opacity 180ms ease, margin 220ms ease;
+}
+.lede.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+}
 
 /* THE BOX */
 .card {

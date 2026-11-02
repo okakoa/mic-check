@@ -30,7 +30,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/styles.v2.css">
+  <link rel="stylesheet" href="/styles.v3.css">
 
   <!-- Site config (GA4 ID, ad provider, keys). Tiny and synchronous on purpose:
        it sets data-ads on <html> before first paint so ad slots never shift the layout. -->
@@ -134,8 +134,13 @@
 
   <main id="main">
     <div class="intro">
-      <h1>Microphone Test: Check if Your Mic Is Working</h1>
-      <p class="lede">MicCheck is a free online microphone test for anyone on a phone, tablet, or computer: press one button to see and hear whether your microphone is working.</p>
+      <div class="intro-header">
+        <h1>Microphone Test: Check if Your Mic Is Working</h1>
+        <button id="intro-toggle" class="intro-toggle" type="button" aria-expanded="false" aria-controls="intro-desc" aria-label="Show description" title="Show description">
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+      </div>
+      <p id="intro-desc" class="lede is-collapsed">MicCheck is a free online microphone test for anyone on a phone, tablet, or computer: press one button to see and hear whether your microphone is working.</p>
     </div>
 
     <!-- THE BOX -->
@@ -282,7 +287,7 @@
     </div>
   </div>
 
-  <script src="/app.v3.js" defer></script>
+  <script src="/app.v4.js" defer></script>
 </body>
 </html>
 
