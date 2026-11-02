@@ -41,10 +41,13 @@ Last updated: **November 1, 2026**
   - **SEO:** 100
   *(Verified across `/`, `/about`, `/privacy`, and `/terms`.)*
 
-### D. Deployment & Version Control
+### D. Deployment, Monetization & Version Control
 - **Phase 1 (Personalization):** Completed using [`scripts/set-site.mjs`](scripts/set-site.mjs) with `One Page Web Apps`, `onepagewebapps@gmail.com`, and `https://mic-check-tool.web.app`.
-- **Phase 2 (Firebase Hosting):** Created Firebase project `mic-check-tool`, deployed all 18 files in `public/` to https://mic-check-tool.web.app, and verified HTTP status codes, clean URLs, security headers, and cache headers on the live edge.
-- **Git & GitHub:** Initialized Git repository on branch `main` and pushed to https://github.com/okakoa/mic-check.
+- **Phase 2 (Firebase Hosting):** Created Firebase project `mic-check-tool`, deployed all 19 files in `public/` to https://mic-check-tool.web.app, and verified HTTP status codes, clean URLs, security headers, and cache headers on the live edge.
+- **Phase 3 (Real-Device & Cross-Browser Testing):** Verified across Chrome, Edge, Safari, Firefox, and Android devices; improved Android microphone label formatting and dropdown syncing in `app.v2.js` / `app.v3.js`.
+- **Phase 5 (Search & Analytics):** Configured GA4 (`G-JXDQL7L7HZ`) under the `One Page Web Apps` account, verified ownership in both **Google Search Console** (`y09TT-Vs7v_0wu4aY_IGKY6kACAYdtzjUkI8gs8K8eQ`) and **Bing Webmaster Tools** (`D5AB82A54FB28CFD907F3802E26B83C6`), and submitted `/sitemap.xml`.
+- **Phase 6 (Monetization – Adsterra Live):** Configured and deployed Adsterra (`provider: "adsterra"`) with a `728×90` desktop banner (`41babd7863c94b1ed41ce8a9853d5cbb`) and `300×250` mobile banner (`240391e5747da4f99cef9682761d42a3`) in Slot A, plus a Native Banner (`230eba95f0712e7ae4ebdf2f75645782`) in Slot B. Confirmed live rendering on both desktop and mobile devices.
+- **Git & GitHub:** All code and documentation committed on branch `main` and backed up to https://github.com/okakoa/mic-check.
 
 ---
 

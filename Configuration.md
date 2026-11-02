@@ -45,7 +45,7 @@ This document records all live accounts, URLs, identifiers, configuration settin
   - `client`: `"ca-pub-XXXXXXXXXXXXXXXX"` (also uncomment `<head>` tags in `public/index.html` and line in `public/ads.txt`)
   - `slotA`: `""` (ad unit ID for Slot A, below the tool card)
   - `slotB`: `""` (ad unit ID for Slot B, above the footer)
-- **Adsterra (`ADS.adsterra`) — LIVE:**
+- **Adsterra (`ADS.adsterra`) — LIVE & VERIFIED ON DESKTOP + MOBILE:**
   - `bannerKey`: `"41babd7863c94b1ed41ce8a9853d5cbb"` (728×90 desktop banner key for Slot A)
   - `bannerSrc`: `"https://bauval.org/22/41babd7863c94b1ed41ce8a9853d5cbb"`
   - `bannerKeyMobile`: `"240391e5747da4f99cef9682761d42a3"` (300×250 mobile banner key for Slot A)

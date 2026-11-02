@@ -1,6 +1,6 @@
 # MicCheck – Implementation Plan
 
-Status as of **November 1, 2026**: the site is built and tested locally (Lighthouse mobile scored 100 in all four categories). Nothing is deployed yet. These are the remaining tasks, in order.
+Status as of **November 1, 2026**: Phases 1, 2, 3, 5, and 6 are **live and completed** on https://mic-check-tool.web.app (GA4 `G-JXDQL7L7HZ`, Google Search Console & Bing Webmaster Tools verified, and Adsterra banners displaying on desktop and mobile).
 
 > Details for each step are in [README.md](README.md). All analytics, ad and consent settings live in one file: `public/config.js`.
 
@@ -63,6 +63,7 @@ Recommended order: start with Adsterra banners → build traffic → apply to Ad
 **Adsterra (active)**
 - [x] Sign up as a Publisher, add the site, create a Banner unit (`728x90` + `300x250`) and a Native Banner.
 - [x] Paste the keys/URLs into `ADS.adsterra` in `config.js`, set `provider: "adsterra"`, and deploy (`app.v3.js`, `styles.v2.css`).
+- [x] Confirmed ads are rendering live on both desktop (`728x90` + Native Banner) and mobile (`300x250` + Native Banner) devices.
 - [ ] Optional: if Adsterra provides `ads.txt` lines under Websites → `ads.txt`, paste them into `public/ads.txt` and deploy.
 
 **AdSense (when you have some traffic)**
