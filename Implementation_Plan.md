@@ -53,6 +53,7 @@ Status as of **November 1, 2026**: Phases 1, 2, 3, 5, and 6 are **live and compl
 - [x] GA4 → Admin → Custom definitions → register `result` as an event-scoped custom dimension (optional dashboard view).
 - [x] Confirm `test_started`, `test_result` (`{ result: "working" }`) and `playback_clicked` fire and send to `G-JXDQL7L7HZ` (verified in GA4 Realtime on mobile & desktop).
 - [x] Google Search Console: verified `https://mic-check-tool.web.app` via HTML `<meta>` tag and submitted `/sitemap.xml`.
+- [x] Bing Webmaster Tools: verified `https://mic-check-tool.web.app` via `msvalidate.01` HTML `<meta>` tag (`D5AB82A54FB28CFD907F3802E26B83C6`).
 - [x] Rich Results / JSON-LD check: verified `WebApplication`, `Organization`, and `FAQPage` schemas on live page.
 - [x] Run Lighthouse (mobile) on the live URL and confirm 95+ in every category (**Performance: 99, Accessibility: 100, Best Practices: 100, SEO: 100**).
 
@@ -64,7 +65,7 @@ Recommended order: start with Adsterra banners → build traffic → apply to Ad
 - [x] Sign up as a Publisher, add the site, create a Banner unit (`728x90` + `300x250`) and a Native Banner.
 - [x] Paste the keys/URLs into `ADS.adsterra` in `config.js`, set `provider: "adsterra"`, and deploy (`app.v3.js`, `styles.v2.css`).
 - [x] Confirmed ads are rendering live on both desktop (`728x90` + Native Banner) and mobile (`300x250` + Native Banner) devices.
-- [ ] Optional: if Adsterra provides `ads.txt` lines under Websites → `ads.txt`, paste them into `public/ads.txt` and deploy.
+- [x] `public/ads.txt` prepared and deployed.
 
 **AdSense (when you have some traffic)**
 - [ ] Set `provider: "none"` while under review.
@@ -80,8 +81,9 @@ Recommended order: start with Adsterra banners → build traffic → apply to Ad
 
 ## Phase 7 – Ongoing maintenance
 
-- [ ] After any content change: update the "Last updated" dates (`index.html`, `privacy.html`, `terms.html`) and `lastmod` in `sitemap.xml`.
-- [ ] After editing CSS/JS: bump the version in the filename (`.v1.` → `.v2.`) and update every HTML file.
+- [x] After editing CSS/JS: bumped the version in the filename (`styles.v1.css` → `styles.v2.css`, `app.v1.js` → `app.v3.js`) and updated every HTML file.
+- [x] GitHub repository (`https://github.com/okakoa/mic-check`) created, connected, and synced with `main`.
+- [ ] After any future content change: update the "Last updated" dates (`index.html`, `privacy.html`, `terms.html`) and `lastmod` in `sitemap.xml`.
 - [ ] If the FAQ changes, update the matching FAQ JSON-LD in `index.html` word for word.
 - [ ] Once the ad network is final: add a Content-Security-Policy header (TODO in `index.html`).
 - [ ] Monthly: check GA4 (how many tests, share of "blocked"/"silent" results) and Search Console (search terms, errors).
