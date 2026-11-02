@@ -49,8 +49,8 @@ Last updated: **November 1, 2026**
 ---
 
 ## 3. Next Steps (See [`Implementation_Plan.md`](Implementation_Plan.md))
-1. **Phase 3 – Real-Device Testing:** Test https://mic-check-tool.web.app across Windows/Mac/iOS/Android browsers with physical microphones.
-2. **Phase 4 – Custom Domain (Optional):** Connect a custom domain in Firebase Console → Hosting and run `node scripts/set-site.mjs --url https://your-domain.com`.
-3. **Phase 5 – Search & Analytics:** Add your GA4 Measurement ID to `public/config.js`, register the `result` custom dimension in GA4, and submit `/sitemap.xml` in Google Search Console.
-4. **Phase 6 – Monetization:** Add Adsterra, AdSense, or Monetag credentials in `public/config.js` and `public/ads.txt` when ready.
+- **Completed:** Phases 1 (Personalization), 2 (Firebase Hosting Deployment), 3 (Real-Device & Cross-Browser Testing), and 5 (GA4 `G-JXDQL7L7HZ` & Google Search Console Verification + Sitemap Submission).
+- **Optional Future Steps:**
+  1. **Phase 4 – Custom Domain (Optional):** Connect a custom domain in Firebase Console → Hosting and run `node scripts/set-site.mjs --url https://your-domain.com`.
+  2. **Phase 6 – Monetization:** Add Adsterra, AdSense, or Monetag credentials in `public/config.js` and `public/ads.txt` when ready.
 

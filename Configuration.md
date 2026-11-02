@@ -18,6 +18,8 @@ This document records all live accounts, URLs, identifiers, configuration settin
 | **Firebase Account (CLI)** | `okakoa@gmail.com` |
 | **Firebase Console** | https://console.firebase.google.com/project/mic-check-tool/overview |
 | **GitHub Repository** | https://github.com/okakoa/mic-check |
+| **Google Analytics 4 ID** | `G-JXDQL7L7HZ` (Account: `One Page Web Apps`) |
+| **Search Console Meta Tag** | `y09TT-Vs7v_0wu4aY_IGKY6kACAYdtzjUkI8gs8K8eQ` |
 | **Git Default Branch** | `main` |
 | **Local Git Author** | `One Page Web Apps <onepagewebapps@gmail.com>` |
 
