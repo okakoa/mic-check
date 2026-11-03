@@ -1,6 +1,6 @@
-# MicCheck – 8-Second Short-Form Video Campaign & Production Script
+# MicCheck – Google Flow MCP, 8-Second Short-Form Video Campaign & Production Script
 
-This document details the production flow, script variants, weekly launch run, and social response playbook for short vertical videos (9:16) targeting **TikTok**, **Instagram Reels**, and **YouTube Shorts**.
+This document details the production flow, script variants, weekly launch run, and social response playbook for short vertical videos (9:16) targeting **TikTok**, **Facebook Reels**, and **YouTube Shorts**.
 
 ---
 
@@ -177,3 +177,4 @@ Action sequence:
 3. (5-8s) Result banner flashes: "✅ Yes: your microphone is working." Finger taps "Play it back" for audio verification. Text sticker: "Instant 4s Playback • 100% On-Device".
 Audio: High-tempo subtle tech beat, clean UI tap sound effect, and an energetic voiceover delivering: "Test if your microphone works in under five seconds before your meeting. No downloads, zero sign-up, audio never leaves your device. Link in bio."
 ```
+

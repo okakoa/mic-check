@@ -81,7 +81,7 @@ Recommended order: start with Adsterra banners → build traffic → apply to Ad
 
 ## Phase 7 – Ongoing maintenance
 
-- [x] After editing CSS/JS: bumped the version in the filename (`styles.v1.css` → `styles.v2.css`, `app.v1.js` → `app.v3.js`) and updated every HTML file.
+- [x] After editing CSS/JS: bumped the version in the filename (`styles.v8.css`, `app.v4.js`) and updated every HTML file.
 - [x] GitHub repository (`https://github.com/okakoa/mic-check`) created, connected, and synced with `main`.
 - [ ] After any future content change: update the "Last updated" dates (`index.html`, `privacy.html`, `terms.html`) and `lastmod` in `sitemap.xml`.
 - [ ] If the FAQ changes, update the matching FAQ JSON-LD in `index.html` word for word.

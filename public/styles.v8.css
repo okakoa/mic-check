@@ -402,13 +402,179 @@ html:not([data-ads="none"]) .ad-slot-b { min-height: 300px; }
 }
 .ad-slot.is-empty { display: none !important; }
 
-/* Content */
+/* Content Sections & Structured Card Grids */
 .content { margin-top: 2.5rem; }
 .content ol, .content ul { padding-left: 1.4rem; margin: 0 0 1rem; }
 .content li { margin-bottom: 0.4rem; }
 .content p { margin: 0 0 1rem; }
-.faq h3 { margin-top: 1.25rem; }
-.updated { color: var(--muted); font-size: 0.9375rem; margin-top: 1.5rem; }
+
+.content-section {
+  margin-top: 2.25rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 750;
+  margin: 0 0 1rem;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+@media (min-width: 600px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--muted);
+  max-width: 38rem;
+  margin: -0.25rem auto 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.section-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 1.25rem auto 0;
+  max-width: 40rem;
+}
+
+/* Steps Grid (3 columns on desktop, 1 on mobile) */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 680px) {
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* 2-Column Grid for Troubleshooting & FAQs */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 680px) {
+  .grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .card-span-2 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Shared Card Styling (Glassmorphic dark / clean light) */
+.step-card,
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.step-card:hover,
+.info-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+}
+
+@media (prefers-color-scheme: dark) {
+  .step-card,
+  .info-card {
+    background: rgba(24, 32, 41, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  }
+  .step-card:hover,
+  .info-card:hover {
+    border-color: rgba(138, 180, 255, 0.35);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Step Number Badge */
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  font-weight: 750;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .step-num {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-color: rgba(59, 130, 246, 0.35);
+  }
+}
+
+/* Headings & Text within Cards */
+.step-card h3,
+.info-card h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.step-card p,
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.info-card li {
+  margin-bottom: 0.45rem;
+}
+
+.info-card li:last-child {
+  margin-bottom: 0;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
 
 /* Legal pages */
 .page h1 { font-size: 1.625rem; }

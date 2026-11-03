@@ -30,7 +30,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/styles.v7.css">
+  <link rel="stylesheet" href="/styles.v8.css">
 
   <!-- Site config (GA4 ID, ad provider, keys). Tiny and synchronous on purpose:
        it sets data-ads on <html> before first paint so ad slots never shift the layout. -->
@@ -186,82 +186,124 @@
       <div class="ad-fill"></div>
     </div>
 
-    <section class="content" aria-labelledby="how">
-      <h2 id="how">How it works</h2>
-      <ol>
-        <li>Press "Test my microphone" and allow microphone access when your browser asks.</li>
-        <li>Speak or clap for five seconds while the page measures the input level from your microphone.</li>
-        <li>The page tells you in plain words whether your microphone is working, and you can play back a four-second recording to hear yourself.</li>
-      </ol>
-      <p>Everything happens inside your browser. No audio is uploaded, stored on a server, or sent anywhere. When the test ends, the page releases the microphone and your browser's recording indicator turns off.</p>
+    <section class="content-section" aria-labelledby="how">
+      <h2 id="how" class="section-title">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Allow Access</h3>
+          <p>Press "Test my microphone" and allow microphone access when your browser asks.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Speak or Clap</h3>
+          <p>Speak or clap for five seconds while the page measures the input level from your microphone.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Hear the Result</h3>
+          <p>The page tells you in plain words whether your microphone is working, and you can play back a four-second recording to hear yourself.</p>
+        </div>
+      </div>
+      <p class="section-note">Everything happens inside your browser. No audio is uploaded, stored on a server, or sent anywhere. When the test ends, the page releases the microphone and your browser's recording indicator turns off.</p>
     </section>
 
-    <section class="content" aria-labelledby="fix">
-      <h2 id="fix">Microphone not working?</h2>
-      <p>Start with the basics: make sure the microphone is plugged in or connected, is not muted by a hardware switch or headset button, and is not being used by a video-call app. Then follow the steps for your device.</p>
+    <section class="content-section" aria-labelledby="fix">
+      <h2 id="fix" class="section-title">Microphone Not Working?</h2>
+      <p class="section-intro">Start with the basics: make sure the microphone is plugged in or connected, is not muted by a hardware switch or headset button, and is not being used by a video-call app. Then follow the steps for your device.</p>
 
-      <h3>Windows 10 and 11</h3>
-      <ul>
-        <li>Open Settings &gt; Privacy &amp; security &gt; Microphone and turn on "Microphone access" and "Let desktop apps access your microphone".</li>
-        <li>Open Settings &gt; System &gt; Sound, choose the correct microphone under Input, and check that its volume is not at 0.</li>
-        <li>If the microphone is listed as disabled, open Sound settings &gt; More sound settings &gt; Recording, right-click it, and choose Enable.</li>
-      </ul>
+      <div class="grid-2col">
+        <div class="info-card">
+          <h3>Windows 10 and 11</h3>
+          <ul>
+            <li>Open Settings &gt; Privacy &amp; security &gt; Microphone and turn on "Microphone access" and "Let desktop apps access your microphone".</li>
+            <li>Open Settings &gt; System &gt; Sound, choose the correct microphone under Input, and check that its volume is not at 0.</li>
+            <li>If the microphone is listed as disabled, open Sound settings &gt; More sound settings &gt; Recording, right-click it, and choose Enable.</li>
+          </ul>
+        </div>
 
-      <h3>Mac</h3>
-      <ul>
-        <li>Open System Settings &gt; Privacy &amp; Security &gt; Microphone and turn on your browser (Chrome, Edge, Firefox, or Safari). Restart the browser afterwards.</li>
-        <li>Open System Settings &gt; Sound &gt; Input, select the right microphone, and raise the input volume.</li>
-      </ul>
+        <div class="info-card">
+          <h3>Mac</h3>
+          <ul>
+            <li>Open System Settings &gt; Privacy &amp; Security &gt; Microphone and turn on your browser (Chrome, Edge, Firefox, or Safari). Restart the browser afterwards.</li>
+            <li>Open System Settings &gt; Sound &gt; Input, select the right microphone, and raise the input volume.</li>
+          </ul>
+        </div>
 
-      <h3>iPhone and iPad</h3>
-      <ul>
-        <li>In Safari, tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow, and reload the page.</li>
-        <li>For Chrome or another browser, open Settings, scroll to the browser app, and turn on Microphone.</li>
-        <li>Check that no other app, call, or screen recording is using the microphone, and remove any case that covers the microphone holes.</li>
-      </ul>
+        <div class="info-card">
+          <h3>iPhone and iPad</h3>
+          <ul>
+            <li>In Safari, tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow, and reload the page.</li>
+            <li>For Chrome or another browser, open Settings, scroll to the browser app, and turn on Microphone.</li>
+            <li>Check that no other app, call, or screen recording is using the microphone, and remove any case that covers the microphone holes.</li>
+          </ul>
+        </div>
 
-      <h3>Android</h3>
-      <ul>
-        <li>Open Settings &gt; Apps &gt; your browser &gt; Permissions &gt; Microphone and choose "Allow only while using the app" or "Ask every time".</li>
-        <li>On Android 12 and newer, open quick settings and make sure the microphone access toggle is on.</li>
-        <li>In Chrome, tap the icon to the left of the web address, open Permissions, and allow Microphone.</li>
-      </ul>
+        <div class="info-card">
+          <h3>Android</h3>
+          <ul>
+            <li>Open Settings &gt; Apps &gt; your browser &gt; Permissions &gt; Microphone and choose "Allow only while using the app" or "Ask every time".</li>
+            <li>On Android 12 and newer, open quick settings and make sure the microphone access toggle is on.</li>
+            <li>In Chrome, tap the icon to the left of the web address, open Permissions, and allow Microphone.</li>
+          </ul>
+        </div>
 
-      <h3>Reset the permission in your browser</h3>
-      <ul>
-        <li><strong>Chrome and Edge:</strong> click the icon to the left of the web address, set Microphone to Allow, then reload. You can also check chrome://settings/content/microphone or edge://settings/content/microphone.</li>
-        <li><strong>Firefox:</strong> click the permissions icon to the left of the web address, clear the blocked microphone permission, then reload and choose Allow.</li>
-        <li><strong>Safari on Mac:</strong> open Safari &gt; Settings &gt; Websites &gt; Microphone and set this website to Allow.</li>
-        <li><strong>Safari on iPhone and iPad:</strong> tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow.</li>
-      </ul>
+        <div class="info-card card-span-2">
+          <h3>Reset the permission in your browser</h3>
+          <ul>
+            <li><strong>Chrome and Edge:</strong> click the icon to the left of the web address, set Microphone to Allow, then reload. You can also check chrome://settings/content/microphone or edge://settings/content/microphone.</li>
+            <li><strong>Firefox:</strong> click the permissions icon to the left of the web address, clear the blocked microphone permission, then reload and choose Allow.</li>
+            <li><strong>Safari on Mac:</strong> open Safari &gt; Settings &gt; Websites &gt; Microphone and set this website to Allow.</li>
+            <li><strong>Safari on iPhone and iPad:</strong> tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section class="content faq" aria-labelledby="faq">
-      <h2 id="faq">Frequently asked questions</h2>
+    <section class="content-section" aria-labelledby="faq">
+      <h2 id="faq" class="section-title">Frequently Asked Questions</h2>
 
-      <h3>How do I test my microphone online?</h3>
-      <p>Press "Test my microphone" at the top of this page and allow microphone access when your browser asks. Speak or clap for five seconds and the page tells you whether your microphone is working. You can then play back a short recording to hear yourself.</p>
+      <div class="grid-2col">
+        <div class="info-card">
+          <h3>How do I test my microphone online?</h3>
+          <p>Press "Test my microphone" at the top of this page and allow microphone access when your browser asks. Speak or clap for five seconds and the page tells you whether your microphone is working. You can then play back a short recording to hear yourself.</p>
+        </div>
 
-      <h3>Why is my microphone not working?</h3>
-      <p>The most common causes are a blocked browser permission, a microphone that is muted or disabled in system settings, the wrong input device being selected, or another app already using the microphone. A loose cable or a Bluetooth headset that is not connected can also be the cause.</p>
+        <div class="info-card">
+          <h3>Why is my microphone not working?</h3>
+          <p>The most common causes are a blocked browser permission, a microphone that is muted or disabled in system settings, the wrong input device being selected, or another app already using the microphone. A loose cable or a Bluetooth headset that is not connected can also be the cause.</p>
+        </div>
 
-      <h3>How do I allow microphone access in Chrome, Safari, or Firefox?</h3>
-      <p>In Chrome and Edge, click the icon to the left of the web address, set Microphone to Allow, and reload the page. In Safari on a Mac, open Safari &gt; Settings &gt; Websites &gt; Microphone and choose Allow for this site; on iPhone and iPad, tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow. In Firefox, click the permissions icon to the left of the web address, clear the blocked microphone permission, and reload.</p>
+        <div class="info-card">
+          <h3>How do I allow microphone access in Chrome, Safari, or Firefox?</h3>
+          <p>In Chrome and Edge, click the icon to the left of the web address, set Microphone to Allow, and reload the page. In Safari on a Mac, open Safari &gt; Settings &gt; Websites &gt; Microphone and choose Allow for this site; on iPhone and iPad, tap the page menu in the address bar, then Website Settings &gt; Microphone &gt; Allow. In Firefox, click the permissions icon to the left of the web address, clear the blocked microphone permission, and reload.</p>
+        </div>
 
-      <h3>Is this microphone test safe? Is my audio recorded or uploaded?</h3>
-      <p>Yes, it is safe. All audio is processed inside your browser and never leaves your device. The short playback clip is kept only in your browser's memory and is discarded when you reload or leave the page.</p>
+        <div class="info-card">
+          <h3>Is this microphone test safe? Is my audio recorded or uploaded?</h3>
+          <p>Yes, it is safe. All audio is processed inside your browser and never leaves your device. The short playback clip is kept only in your browser's memory and is discarded when you reload or leave the page.</p>
+        </div>
 
-      <h3>Does it work on iPhone and Android?</h3>
-      <p>Yes. It works in Safari on iPhone and iPad and in Chrome, Edge, Firefox, and Samsung Internet on Android. On very old versions of iOS the level test works, but the playback feature may not be available.</p>
+        <div class="info-card">
+          <h3>Does it work on iPhone and Android?</h3>
+          <p>Yes. It works in Safari on iPhone and iPad and in Chrome, Edge, Firefox, and Samsung Internet on Android. On very old versions of iOS the level test works, but the playback feature may not be available.</p>
+        </div>
 
-      <h3>Why does my mic work in other apps but not in the browser?</h3>
-      <p>The browser needs its own permission to use the microphone. On Windows and Mac, the browser app must be allowed in the system privacy settings, and this website must be allowed inside the browser. If another app is holding the microphone, close it and test again.</p>
+        <div class="info-card">
+          <h3>Why does my mic work in other apps but not in the browser?</h3>
+          <p>The browser needs its own permission to use the microphone. On Windows and Mac, the browser app must be allowed in the system privacy settings, and this website must be allowed inside the browser. If another app is holding the microphone, close it and test again.</p>
+        </div>
 
-      <h3>What does "input level" mean?</h3>
-      <p>Input level is how loud the sound reaching your microphone is, on a scale from 0 to 100. A quiet room usually reads below 10, normal speech close to the microphone reads roughly 40 to 70, and a clap can go higher. If the level stays near 0 while you speak, the microphone is muted, too quiet, or the wrong one is selected.</p>
+        <div class="info-card">
+          <h3>What does "input level" mean?</h3>
+          <p>Input level is how loud the sound reaching your microphone is, on a scale from 0 to 100. A quiet room usually reads below 10, normal speech close to the microphone reads roughly 40 to 70, and a clap can go higher. If the level stays near 0 while you speak, the microphone is muted, too quiet, or the wrong one is selected.</p>
+        </div>
 
-      <h3>Can I choose a different microphone?</h3>
-      <p>Yes. If your device has more than one microphone, a menu appears after the first test so you can pick another one and test again.</p>
+        <div class="info-card">
+          <h3>Can I choose a different microphone?</h3>
+          <p>Yes. If your device has more than one microphone, a menu appears after the first test so you can pick another one and test again.</p>
+        </div>
+      </div>
 
       <p class="updated">Last updated: <time datetime="2026-11-01">November 1, 2026</time></p>
     </section>

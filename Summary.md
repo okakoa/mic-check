@@ -14,11 +14,15 @@ Last updated: **November 1, 2026**
   - Single-page layout with semantic HTML, skip link, a single `<h1>` (*"Microphone Test: Check if Your Mic Is Working"*), and the required plain-language lede sentence directly underneath.
   - **Collapsible Hero Description (`⌄` Toggle):** Collapses the introductory text under **Microphone Test: Check if Your Mic Is Working** by default behind a circular `⌄` chevron button (`48×48px` accessible tap target) so the microphone test card and results are immediately visible at the top of small mobile screens while keeping 100% of the text in the HTML DOM for search and AI crawlers.
   - Centered tool card (`#tool`) with one primary button (*"Test my microphone"*), `aria-live="polite"` result box, decorative level meter paired with live selectable text (`Input level: X / 100`), active microphone display (`Using: …`), multi-mic `<select>` switcher, and in-memory 4-second audio playback (*"Play it back"*).
-  - Comprehensive plain-text sections below the fold for crawlers, AI assistants, and AdSense reviewers: **How it works**, **Microphone not working?** (troubleshooting for Windows 10/11, Mac, iPhone/iPad, Android, and browser permission resets), and **Frequently asked questions** (8 Q&As).
+  - **Tidy Card-Grid Explanatory Content Between Ad Display Blocks:**
+    - **How It Works:** 3-column card grid on desktop (1 column on mobile) with numbered badges (`1`, `2`, `3`), clear bold titles (*Allow Access*, *Speak or Clap*, *Hear the Result*), and descriptive steps, followed by an on-device privacy guarantee note.
+    - **Microphone Not Working?:** 2-column card grid covering OS-specific troubleshooting (Windows 10/11, Mac, iPhone/iPad, Android) with a spanning full-width card for browser permission resets (Chrome, Edge, Firefox, Safari).
+    - **Frequently Asked Questions:** 8 cards arranged in a 2-column responsive grid matching the JSON-LD `FAQPage` schema word-for-word.
   - Full SEO & GEO metadata: `<title>`, `<meta name="description">`, canonical URL, Open Graph & Twitter Card tags, and JSON-LD structured data (`WebApplication`, `Organization`, and `FAQPage` matching the visible FAQ word for word).
-- **`public/styles.v7.css`:**
+- **`public/styles.v8.css`:**
   - Mobile-first, framework-free CSS using the system font stack.
   - Modern futuristic tech header block with glowing cyber gradient accent, glassmorphic dark theme backdrop, pulsing on-device status badge, and favicon logo integration.
+  - Responsive card grids (`.steps-grid`, `.grid-2col`, `.step-card`, `.info-card`, `.step-num`) providing clean, aligned cards with subtle borders and shadows in light mode and glassmorphic dark theme backgrounds.
   - High-contrast light and dark themes (`prefers-color-scheme`), reduced-motion support (`prefers-reduced-motion`), 48px+ tap targets, no horizontal scrolling at 320px width, and reserved ad slot heights (150px+ below interactive controls) to prevent Cumulative Layout Shift (CLS).
 - **`public/app.v4.js`:**
   - Vanilla JavaScript microphone tester using `navigator.mediaDevices.getUserMedia`, Web Audio API `AnalyserNode` (5-second RMS measurement), `MediaRecorder` (4-second local playback clip), and `enumerateDevices()`.
